@@ -1,6 +1,5 @@
 <header
   #navigation
-  (scroll)="onScroll()"
   [ngClass]="colorHeader? 'color':'noColor'"
 >
   <div class="logo">
@@ -8,21 +7,21 @@
       <img
         class="light"
         aria-hidden="true"
-        src="/assets/images/logo-light.png"
+        src="/assets/images/logo-drink-white-trans.png"
         decoding="async"
         alt="logo"
-        width="221"
-        height="66"
+        width="120"
+        height="120"
         *ngIf="!colorHeader && !phoneView"
       />
       <img
         class="light"
         aria-hidden="true"
-        src="/assets/images/logo-blue.png"
+        src="/assets/images/logo-drink.png"
         decoding="async"
         alt="logo"
-        width="221"
-        height="66"
+        width="120"
+        height="120"
         *ngIf="colorHeader || phoneView"
       />
     </a>
@@ -38,7 +37,7 @@
       </li>
       <li>
         <span
-          ><a (click)="scroll(about)" [ngClass]="colorHeader? 'color':'noColor'"
+          ><a [ngClass]="colorHeader? 'color':'noColor'" (click)="scroll(aboutz)"
             >About us</a
           ></span
         >
@@ -65,7 +64,7 @@
 <div class="navListMenu" *ngIf="showDropDown">
   <ul class="navListPhone">
     <li><a href="/home">Home</a></li>
-    <li><a (click)="scroll(about)">About</a></li>
+    <li><a (click)="scroll(aboutz)">About</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
 </div>
@@ -83,15 +82,17 @@
     </div>
   </div>
   <picture>
-    <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp" />
-    <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg" />
+    <source media="(max-width: 600px)" srcset="/assets/images/bar.jpg" />
+    <source media="(min-width: 601px)" srcset="/assets/images/bar.jpg" />
     <img
       aria-hidden="true"
       decoding="async"
-      src="/assets/images/landing.jpg"
+      src="/assets/images/bar.jpg"
       alt="new home"
     />
   </picture>
 </section>
 <app-services></app-services>
-<app-about id="about" #about></app-about>
+<div class="aboutContainer" #aboutz>
+  <app-about></app-about>
+</div>
